@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation';
 import {
   Button,
   Platform,
@@ -10,20 +9,14 @@ import {
 } from 'react-native';
 
 
-
-export default class Home extends Component {
-  NewExpense = () =>
-  {
-     this.props.navigation.navigate('New');
-  }
+export default class New extends Component {
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Home Screen
+          New
         </Text>
-        <Button onPress = { this.NewExpense } title = 'Add a new expense'/>
       </View>
     );
   }

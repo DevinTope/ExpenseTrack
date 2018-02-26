@@ -7,8 +7,7 @@ import {
   View
 } from 'react-native';
 
-type Props = {};
-export default class Details extends Component<Props> {
+export default class Details extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -20,7 +19,7 @@ export default class Details extends Component<Props> {
   }
 }
 
-const styles = StyleSheet.create({
+var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
