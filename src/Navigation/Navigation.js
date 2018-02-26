@@ -8,8 +8,12 @@ import Details from '../Screens/Details';
 export default Navigation = TabNavigator({
     Home: {
       screen: StackNavigator({
-        Home: { screen : Home },
-        New: { screen: New}  
+        Home: { 
+          screen : Home
+        },
+        New: { 
+          screen: New
+        }  
       })
     },
     Details: { 
