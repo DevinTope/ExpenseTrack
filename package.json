@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "firebase": "^4.10.1",
-    "native-base": "^2.3.9",
+    "lodash.chunk": "^4.2.0",
+    "moment": "^2.20.1",
     "react": "16.2.0",
     "react-native": "0.53.3",
     "react-native-svg": "^6.2.2",
     "react-native-svg-charts": "^3.0.2",
-    "react-navigation": "^1.1.2"
+    "react-navigation": "^1.1.2",
+    "tcomb-form-native": "^0.6.11"
   },
   "devDependencies": {
     "babel-jest": "22.4.1",
