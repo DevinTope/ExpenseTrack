@@ -24,7 +24,7 @@ export default class Home extends Component {
     const scrnWidth = Dimensions.get('window').width;
 
     const dataArray = this.props.screenProps.itemArray;
-    console.log(dataArray);
+
     //type array creation
     var foodArray = (_.filter(dataArray, { type: 'food' }));
     var foodTotal = _.sumBy(foodArray,function(a){return a.price});
@@ -38,8 +38,6 @@ export default class Home extends Component {
     var otherArray = (_.filter(dataArray, { type: 'other' }));
     var otherTotal = _.sumBy(otherArray,function(a){return a.price});
 
-    console.log(foodArray);
-
     const data = [ foodTotal, transTotal, persTotal, otherTotal];
 
     var sum = data.reduce((a, b) => a + b, 0);
@@ -51,7 +49,7 @@ export default class Home extends Component {
             value,
             color: colours[index],
             key: `pie-${index}`,
-            onPress: () => alert(`${index} slice pressed`),
+            onPress: () => alert(`${value}`),
       })
     );
 

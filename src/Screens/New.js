@@ -20,11 +20,19 @@ class New extends Component {
     onPress = () => {
         var value = this.refs.form.getValue();
         if (value) {
-            console.log(value);
+            this.props.screenProps.owner.itemsRef.push( { 
+                name: value.name,
+                type: value.type,
+                price: value.price,
+                date: value.date.toString()
+            } );
+            console.log("Successful expense insertion");
         }
     }
     
     render() {
+        const { screenProps } = this.props
+
         var Form = t.form.Form;
 
         var Types = t.enums({
@@ -68,19 +76,17 @@ class New extends Component {
             type: Types,
             price: t.Number,
             date: t.Date
-        });
-
-        
+        });   
 
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
                     New Expense
                 </Text>
-                <Form
-                type={Expense}
-                options={options}
-                value={moment(new Date()).toDate()}/>
+                <Form ref="form"
+                    type={Expense}
+                    options={options}
+                    value={moment(new Date()).toDate()}/>
                 <Button style={styles.submitButton} onPress={this.onPress} underlayColor='#99d9f4' title="Submit"/>
             </View>
         );

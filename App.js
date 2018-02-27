@@ -34,6 +34,7 @@ export default class App extends Component {
       })
     };
     this.itemsRef = this.getRef().child('expense');
+    
   }
 
   getRef() {
@@ -57,7 +58,8 @@ export default class App extends Component {
 
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(items),
-        dataArray: items
+        dataArray: items,
+        parent: this
       });
 
     });
@@ -68,7 +70,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <Navigation screenProps={ {dataArray: this.state.dataSource, itemArray:this.state.dataArray} }/>
+      <Navigation screenProps={ { dataArray: this.state.dataSource, itemArray: this.state.dataArray, owner: this.state.parent } }/>
     );
   }
 }
